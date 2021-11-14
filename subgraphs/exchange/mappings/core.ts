@@ -28,6 +28,8 @@ export function handleTransfer(event: Transfer): void {
 
   // get pair and load contract
   let pair = Pair.load(event.address.toHex());
+  let token0 = Token.load(pair.token0);
+  let token1 = Token.load(pair.token1);
 
   // liquidity token amount being transferred
   let value = convertTokenToDecimal(event.params.value, BI_18);
@@ -57,6 +59,8 @@ export function handleTransfer(event: Transfer): void {
       );
       mint.transaction = transaction.id;
       mint.pair = pair.id;
+      mint.token0 = token0.id;
+      mint.token1 = token1.id;
       mint.to = event.params.to;
       mint.liquidity = value;
       mint.timestamp = transaction.timestamp;
@@ -79,6 +83,8 @@ export function handleTransfer(event: Transfer): void {
     );
     burn.transaction = transaction.id;
     burn.pair = pair.id;
+    burn.token0 = token0.id;
+    burn.token1 = token1.id;
     burn.liquidity = value;
     burn.timestamp = transaction.timestamp;
     burn.to = event.params.to;
@@ -113,6 +119,8 @@ export function handleTransfer(event: Transfer): void {
         burn.transaction = transaction.id;
         burn.needsComplete = false;
         burn.pair = pair.id;
+        burn.token0 = token0.id;
+        burn.token1 = token1.id;
         burn.liquidity = value;
         burn.transaction = transaction.id;
         burn.timestamp = transaction.timestamp;
@@ -122,6 +130,8 @@ export function handleTransfer(event: Transfer): void {
       burn.transaction = transaction.id;
       burn.needsComplete = false;
       burn.pair = pair.id;
+      burn.token0 = token0.id;
+      burn.token1 = token1.id;
       burn.liquidity = value;
       burn.transaction = transaction.id;
       burn.timestamp = transaction.timestamp;
@@ -433,6 +443,8 @@ export function handleSwap(event: Swap): void {
   // update swap event
   swap.transaction = transaction.id;
   swap.pair = pair.id;
+  swap.token0 = token0.id;
+  swap.token1 = token1.id;
   swap.timestamp = transaction.timestamp;
   swap.transaction = transaction.id;
   swap.sender = event.params.sender;
