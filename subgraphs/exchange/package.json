@@ -8,7 +8,8 @@
   "scripts": {
     "codegen": "graph codegen subgraph.yaml",
     "build": "graph build subgraph.yaml",
-    "deploy": "graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ glide-finance/exchange subgraph.yaml",
-    "deploy-local": "graph deploy --ipfs http://localhost:5001 --node http://127.0.0.1:8020 glide-finance/exchange subgraph.yaml"
+    "create-local": "graph create glide/exchange --node http://127.0.0.1:8020",
+    "deploy-local": "graph deploy glide/exchange --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "deploy": "graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ glide/exchange subgraph.yaml"
   }
 }
