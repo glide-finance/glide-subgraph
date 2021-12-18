@@ -1,0 +1,15 @@
+# Manual Glide Staking 
+type ManualGlideStaking @entity {
+  id: ID!
+
+  # stake amount
+  stakeAmount: BigInt!
+}
+
+# Manual Glide Staking 
+type AutoGlideStaking @entity {
+  id: ID!
+
+  # stake amount
+  stakeAmount: BigInt!
+}

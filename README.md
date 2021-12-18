@@ -10,11 +10,13 @@ Currently, there are multiple subgraphs, but additional subgraphs can be added t
 
 2. **[Exchange]**: Tracks all Glide Exchange data with price, volume, liquidity, ...
 
-6. **[Pairs]**: Tracks all Glide Pairs and Tokens.
+2. **[Glide-Staking]**: Tracks all manual and auto Glide stake deposits and withdraws 
 
-11. **[SmartChef]**: Tracks all Glide SmartChef (a.k.a. Sugar Pools) with tokens and rewards.
+4. **[Pairs]**: Tracks all Glide Pairs and Tokens.
 
-12. **[Timelock])**: Tracks all Glide Timelock queued, executed, and cancelled transactions.
+5. **[SmartChef]**: Tracks all Glide SmartChef (a.k.a. Sugar Pools) with tokens and rewards.
+
+6. **[Timelock])**: Tracks all Glide Timelock queued, executed, and cancelled transactions.
 
 ## Dependencies
 
