@@ -1,12 +1,12 @@
-import { ManualGlideStaking } from "../generated/schema";
+import { AutoGlideStaking } from "../generated/schema";
 import { Deposit, Withdraw} from "../generated/GlideVault/GlideVault";
 import { BigInt } from "@graphprotocol/graph-ts"
 
 export function handleDeposit(event: Deposit): void {
-    let entity = ManualGlideStaking.load(event.params.sender.toHex())
+    let entity = AutoGlideStaking.load(event.params.sender.toHex())
 
     if (!entity) {
-        entity = new ManualGlideStaking(event.params.sender.toHex())
+        entity = new AutoGlideStaking(event.params.sender.toHex())
 
         entity.stakeAmount = BigInt.fromI32(0)
     }
@@ -17,10 +17,10 @@ export function handleDeposit(event: Deposit): void {
 }
   
 export function handleWithdraw(event: Withdraw): void {
-    let entity = ManualGlideStaking.load(event.params.sender.toHex())
+    let entity = AutoGlideStaking.load(event.params.sender.toHex())
 
     if (!entity) {
-        entity = new ManualGlideStaking(event.params.sender.toHex())
+        entity = new AutoGlideStaking(event.params.sender.toHex())
 
         entity.stakeAmount = BigInt.fromI32(0)
     }

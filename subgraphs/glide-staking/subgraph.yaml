@@ -10,9 +10,10 @@ dataSources:
     source:
       address: '0x7F5489f77Bb8515DE4e0582B60Eb63A7D9959821'
       abi: MasterChef
+      startBlock: 9057548
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.4
       language: wasm/assemblyscript
       file: ./mappings/manualStaking.ts
       entities:
@@ -33,9 +34,10 @@ dataSources:
     source:
       address: '0xBe224bb2EFe1aE7437Ab428557d3054E63033dA9'
       abi: GlideVault
+      startBlock: 9160231
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.6
+      apiVersion: 0.0.4
       language: wasm/assemblyscript
       file: ./mappings/autoStaking.ts
       entities:
