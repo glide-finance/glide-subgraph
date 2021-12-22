@@ -10,6 +10,9 @@ type ManualGlideStaking @entity {
 type AutoGlideStaking @entity {
   id: ID!
 
+  # share amount
+  shareAmount: BigInt!
+  
   # stake amount
   stakeAmount: BigInt!
 }
