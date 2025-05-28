@@ -6,7 +6,7 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: Migrations
-    network: mainnet
+    network: elastos
     source:
       address: '0x95B7f291800F5264F91afa1E92B99E123fe98Ab3'
       abi: Migrations
